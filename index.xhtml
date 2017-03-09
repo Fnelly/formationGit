@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>Edition des formateurs
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>JSF</title>
+</h:head>
+
+<h:body>
+	<p:fieldset legend="Edition des formateurs" toggleable="true"
+		style="margin-bottom:20px">
+		<h:form id="formulaire">
+		<h:inputHidden id="id" value="#{formateurBean.currentFormateur.id}" />
+			<h:inputHidden id="version"
+				value="#{formateurBean.currentFormateur.version}" />
+			<p:messages globalOnly="true" />
+			<p:panelGrid columns="5" border="1">
+				<!-- entête -->
+				<h:outputText value="Civilité" styleClass="entete" />
+				<h:outputText value="Nom" styleClass="entete" />
+				<h:outputText value="Prénom" styleClass="entete" />
+				<h:outputText value="Date de naissance" styleClass="entete" />
+				<h:outputText value="Coût" styleClass="entete" />
+				<!-- ligne 1 -->
+<!-- 				<p:outputLabel for="intitule" value="Civilité :" /> -->
+<!-- 					<h:selectOneRadio value="#{formateur.currentformateur.titre.civilite}"> -->
+<!-- 					   	<f:selectItem itemValue="Monsieur" itemLabel="Monsieur" /> -->
+<!-- 					   	<f:selectItem itemValue="Madame" itemLabel="Madame" /> -->
+<!-- 					</h:selectOneRadio> -->
+<!-- 				<p:message for="intitule" /> -->
+			</p:panelGrid>
+			<!-- boutons de commande -->
+			<p:panelGrid columns="2">
+				<p:commandButton  value="Valider" action="#{matiereBean.save}" ajax="false"/>
+				<!-- 			<p:commandButton value="Annuler" immediate="false" -->
+				<!-- 				action="#{matiereBean.cancel}"/> -->
+			</p:panelGrid>
+		</h:form>
+	</p:fieldset>
+</h:body>
+</html>
